@@ -1,0 +1,14 @@
+#/use/bin/python
+# -*- coding: latin-1 -*-
+i = 100;
+
+import random;
+# 获取整数
+print abs(-100);
+
+print float(i);
+
+print random.random();
+
+
+print random.choice(range(100000));
