@@ -1,4 +1,4 @@
-#/use/bin/python
+#/usr/bin/python
 # -*- coding: latin-1 -*-
 i = 100;
 
