@@ -13,6 +13,12 @@ import MySQLdb;
 	'port':3307,
 }
 '''
+from db_config import mysql_config
+
+m_config  = mysql_config()
+
+m_config.abc('schedule');
+
 def py_mysql_connect(config,sql):
 	try:
 		db = MySQLdb.connect(**config)
