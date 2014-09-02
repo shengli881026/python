@@ -6,7 +6,7 @@ class mysql_config():
 		self.name = name
 		print name
 	'''
-	def abc(self,name):
+	def get_config(self,name):
 		self.name = name
 		config ={
 			'schedule':{
@@ -18,3 +18,4 @@ class mysql_config():
 			},
 		}
 		return config[name]
+

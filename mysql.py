@@ -1,37 +1,37 @@
 #/uer/bin/python
 
 import MySQLdb;
-
-#db = MySQLdb.connect('192.168.6.11:3307','okooo_php2','123465','schedule');
-
-
-'''config  ={
-	'host':'192.168.6.11',
-	'user':'okooo_php2',
-	'passwd':'123465',
-	'db':'schedule',
-	'port':3307,
-}
-'''
 from db_config import mysql_config
-
 m_config  = mysql_config()
+class db_mysql():
+	def __init__(self):
+		print 'class:db_mysql -import -true'
 
-m_config.abc('schedule');
-
-def py_mysql_connect(config,sql):
-	try:
-		db = MySQLdb.connect(**config)
-		cursor = db.cursor()
+	def connect(self,name):
+		#self.sql  = sql
+		self.name = name
+		try:
+			#self.config = m_config.abc(name)
+			config  = m_config.get_config(name)
+			db = MySQLdb.connect(**config)
+			cursor = db.cursor()
+			#cursor.execute(sql)
+		except MySQLdb.connector.Error as err:
+			print("Something went wrong: {}".format(err))
+		return cursor
+	
+	def execute(self,cursor,sql):
 		cursor.execute(sql)
-	except MySQLdb.connector.Error as err:
-		print("Something went wrong: {}".format(err))
-	return cursor
+		return cursor
 
-def fetchall_result(cursor):
-	data = cursor.fetchall()
-	return data
-
+	def fetchall(self,cursor):
+		data = cursor.fetchall()
+		return data
+	
+	def fetchone(self,cursor):
+		return cursor.fetchone()
+	
+	
 
 #data  = cursor.fetchall();
 #print data;
