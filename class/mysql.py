@@ -30,8 +30,12 @@ class db_mysql():
 	
 	def fetchone(self,cursor):
 		return cursor.fetchone()
-	
-	
+
+	def insert(self,cursor,sql):
+		cursor.execute(sql)
+		db.commit()
+		return true
+
 
 #data  = cursor.fetchall();
 #print data;
