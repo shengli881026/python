@@ -36,9 +36,8 @@ class db_mysql():
 		db.commit()
 		return true
 
+	def dbclose(self):
+		db.close()
 
 #data  = cursor.fetchall();
 #print data;
-
-
-
